@@ -1,4 +1,4 @@
-import { Minus, Plus, X, ShoppingBag } from "lucide-react";
+import { Minus, Plus, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -16,7 +16,7 @@ export const CartSidebar = () => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="relative">
-          <ShoppingBag className="h-5 w-5" />
+          <ShoppingCart className="h-5 w-5" />
           {itemCount > 0 && (
             <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
               {itemCount}
@@ -27,7 +27,7 @@ export const CartSidebar = () => {
       <SheetContent className="w-full sm:max-w-lg">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
-            <ShoppingBag className="h-5 w-5" />
+            <ShoppingCart className="h-5 w-5" />
             Shopping Cart ({itemCount})
           </SheetTitle>
         </SheetHeader>
@@ -36,7 +36,7 @@ export const CartSidebar = () => {
           <div className="flex-1 overflow-y-auto py-4">
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-32 text-center">
-                <ShoppingBag className="h-12 w-12 text-muted-foreground mb-2" />
+                <ShoppingCart className="h-12 w-12 text-muted-foreground mb-2" />
                 <p className="text-muted-foreground">Your cart is empty</p>
               </div>
             ) : (

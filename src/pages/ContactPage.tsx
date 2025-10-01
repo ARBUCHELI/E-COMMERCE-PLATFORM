@@ -60,7 +60,7 @@ const ContactPage = () => {
                   <Mail className="w-6 h-6 text-primary" />
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">support@vault.com</p>
+                    <p className="text-muted-foreground">andresrbucheli@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -72,7 +72,7 @@ const ContactPage = () => {
                   <Phone className="w-6 h-6 text-primary" />
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+7 (960) 184-7870</p>
                   </div>
                 </div>
               </CardContent>
@@ -84,7 +84,7 @@ const ContactPage = () => {
                   <MapPin className="w-6 h-6 text-primary" />
                   <div>
                     <h3 className="font-semibold mb-1">Address</h3>
-                    <p className="text-muted-foreground">123 Commerce St<br />New York, NY 10001</p>
+                    <p className="text-muted-foreground">Zalomova 11<br />Nizhny Novgorod, Russia</p>
                   </div>
                 </div>
               </CardContent>

@@ -63,7 +63,7 @@ const FAQPage = () => {
               How can I contact customer support?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground">
-              You can reach our customer support team via email at support@vault.com or call us at +1 (555) 123-4567 during business hours.
+              You can reach our customer support team via email at andresrbucheli@gmail.com or call us at +7 (960) 184-7870 during business hours.
             </AccordionContent>
           </AccordionItem>
 
