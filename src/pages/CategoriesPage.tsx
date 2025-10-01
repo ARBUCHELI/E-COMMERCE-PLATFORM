@@ -82,7 +82,11 @@ const CategoriesPage = () => {
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {category.description || `Explore our ${category.name.toLowerCase()} collection`}
                   </p>
-                  <Button variant="ghost" className="group-hover:bg-primary/10 transition-colors p-0 h-auto">
+                  <Button 
+                    variant="ghost" 
+                    className="group-hover:bg-primary/10 transition-colors p-0 h-auto"
+                    onClick={() => window.location.href = `/category/${category.slug}`}
+                  >
                     Browse {category.name}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>

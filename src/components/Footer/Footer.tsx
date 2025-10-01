@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthModal } from "@/components/auth/AuthModal";
+import { Heart, Coffee } from 'lucide-react'
 
 const Footer: React.FC = () => {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+
+  const handleAuthClick = (mode: 'signin' | 'signup') => {
+    setAuthMode(mode);
+    setIsAuthModalOpen(true);
+  };
+
   return (
+    <>
+      <AuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)}
+        defaultTab={authMode}
+      />
     <footer className="bg-gray-900 text-white py-12 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -10,9 +26,9 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">V</span>
+                <span className="text-white font-bold text-lg">S</span>
               </div>
-              <span className="font-bold text-xl text-white font-primary">VAULT</span>
+              <span className="font-bold text-xl text-white font-primary">ShopApp</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Your trusted e-commerce platform for electronics, clothing, and musical instruments.
@@ -99,14 +115,20 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Account</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/signin" className="text-gray-400 hover:text-white transition-colors">
+                <button 
+                  onClick={() => handleAuthClick('signin')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Sign In
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/register" className="text-gray-400 hover:text-white transition-colors">
+                <button 
+                  onClick={() => handleAuthClick('signup')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Create Account
-                </Link>
+                </button>
               </li>
               <li>
                 <Link to="/profile" className="text-gray-400 hover:text-white transition-colors">
@@ -124,11 +146,17 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 VAULT E-commerce. All rights reserved.
+            <div className='flex items-center space-x-2 text-sm text-muted-foreground'>
+              <span>© 2025 Andrés R. Bucheli. Made with</span>
+              <Heart className='w-4 h-4 text-red-500 fill-current animate-pulse' />
+              <span>and lots of</span>
+              <Coffee className='w-4 h-4 text-primary' />
+            </div>
           </p>
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
